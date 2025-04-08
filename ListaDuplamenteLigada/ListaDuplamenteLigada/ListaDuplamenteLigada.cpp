@@ -150,17 +150,35 @@ void inserirElemento()
 // funções a serem implementadas no exericio
 void exibirReverso()
 {
-
+	NO* aux = ultimo;
+	while (aux != NULL) {
+		cout << aux->valor << endl;
+		aux = aux->ant;
+	}
 }
 
 void excluirPrimeiroElemento()
 {
-
+	NO* aux = primeiro;
+	if (primeiro != NULL) {
+		primeiro = primeiro->prox;
+		free(aux);
+		cout << "excluido com sucesso! ";
+	}
+	else {
+		cout << "lista vazia ";
+	}
 }
 
 void excluirUltimoElemento()
 {
-
+	NO* aux = ultimo;
+	if (ultimo != NULL) {
+		ultimo = ultimo->ant;
+		ultimo->prox = NULL;
+		free(aux);
+		cout << "excluido com sucesso! ";
+	}
 }
 
 
